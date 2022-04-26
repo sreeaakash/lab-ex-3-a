@@ -1,0 +1,156 @@
+
+
+
+<html>
+<head> Exercise 3 </head>
+<body>
+ <script type="text/javascript">
+ 
+ 
+ 
+ const people = [
+                { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' },
+
+                { firstName: 'Terri', lastName: 'Bishop', DOB: '02/04/1989', department: 'Development', salary: '35000' },
+
+                { firstName: 'Jar', lastName: 'Burke', DOB: '11/01/1985', department: 'Marketing', salary: '38000' },
+
+                { firstName: 'Julio', lastName: 'Miller', DOB: '12/07/1991', department: 'Sales', salary: '40000' },
+
+                { firstName: 'Chester', lastName: 'Flores', DOB: '03/15/1988', department: 'Development', salary: '41000' },
+
+                { firstName: 'Madison', lastName: 'Marshall', DOB: '09/22/1980', department: 'Sales', salary: '32000' },
+
+                { firstName: 'Ava', lastName: 'Pena', DOB: '11/02/1986', department: 'Development', salary: '38000' },
+
+                { firstName: 'Gabriella', lastName: 'Steward', DOB: '08/26/1994', department: 'Marketing', salary: '46000' },
+
+                { firstName: 'Charles', lastName: 'Campbell', DOB: '09/04/1977', department: 'Sales', salary: '42000' },
+
+                { firstName: 'Tiffany', lastName: 'Lambert', DOB: '05/11/1990', department: 'Development', salary: '34000' },
+
+                { firstName: 'Antonio', lastName: 'Gonzalez', DOB: '03/24/1985', department: 'Office Management', salary: '49000' },
+
+                { firstName: 'Aaron', lastName: 'Garrett', DOB: '09/04/1985', department: 'Development', salary: '39000' },
+
+            ];
+			var avg=0;
+			var sum=0;
+		for(var i=0;i<12;i++)
+		{
+		
+		    sum=sum+parseInt((people[i].salary));
+			
+		
+		}
+		avg=sum/12;
+		
+		document.write(" </br>Average salary of a person " +avg);
+		document.write(" </br> Name of the People whose age is greater than 30:" +"</br>");
+		for(var i=0;i<12;i++)
+		{
+		
+		    var dob = new Date(people[i].DOB);
+    
+    var month_diff = Date.now() - dob.getTime();
+
+   
+    var age_dt = new Date(month_diff); 
+  
+  
+    var year = age_dt.getUTCFullYear();
+    
+    
+    var age = Math.abs(year - 1970);
+	
+         if(age>30)
+		 {
+		      document.write("</br>"+people[i].firstName+" "+people[i].lastName);
+   
+	      }
+	  
+    }
+	
+	document.write("</br> </br>"+"People fullname:");
+	for(var i=0;i<12;i++)
+	{
+	   document.write("</br>"+people[i].firstName+" "+people[i].lastName);
+	
+	
+	}
+	document.write("</br>");
+	document.write("</br>"+"Name in sorted format"+"</br>");
+	
+	const name=new Array(12);
+	for(var i=0;i<12;i++)
+	{
+	    
+	     var dob = new Date(people[i].DOB);
+    
+    var month_diff = Date.now() - dob.getTime();
+
+   
+    var age_dt = new Date(month_diff); 
+  
+  
+    var year = age_dt.getUTCFullYear();
+    
+    
+    var age = Math.abs(year - 1970);
+	   
+	    
+		name[i]=age+" - "+people[i].firstName;
+		
+	
+	}
+	name.sort();
+	
+	for(var i=0;i<12;i++)
+	{
+	    document.write(name[i]+"</br>");
+	
+	}
+	document.write("</br>");
+	document.write("Count of each Department");
+	var dev=0;
+	var off=0;
+	var mark=0;
+	var sal=0;
+	for(var i=0;i<12;i++)
+	{
+	      if(people[i].department=="Development")
+		  {
+		      dev++;
+		  }
+          else   if(people[i].department=="Sales")
+		  {
+		      sal++;
+		  }
+		  else if(people[i].department=="Marketing")
+		  {
+		      mark++;
+		  }
+		  else if(people[i].department=="Office Management")
+		  {
+		      off++;
+		  }
+	
+	
+	}
+	document.write("</br>");
+	document.write("Development - "+dev+"</br>");
+	document.write("Sales - "+sal+"</br>");
+	document.write("Marketing - "+mark+"</br>");
+	document.write("Office Management - "+off+"</br>");
+	      
+	
+	
+	
+	
+	 </script>
+	 
+	
+	 </body>
+	 
+
+</html>
